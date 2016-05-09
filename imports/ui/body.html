@@ -1,0 +1,23 @@
+<body>
+  <h1>Weather Information</h1>
+        <div class="well well-sm">
+            <div class="row">
+                <div class="form-group col-xs-12 col-sm-5 col-md-5 col-lg-5">
+					<select id='city' name='city' class='form-control required'>
+					  {{#each cityOpts}}
+					      <option value='{{this.value}}'>{{this.name}}</option>
+					  {{/each}}
+					</select>
+                </div>
+            </div>
+             <div class="row">
+                <div class="form-group col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            		{{#if city_data}}
+						{{> reactiveTable collection=city_data settings=tableSettings}}
+					{{/if}}
+                </div>
+            </div>
+        </div>
+</body>
+
+
